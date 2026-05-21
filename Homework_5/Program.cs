@@ -5,6 +5,29 @@
         static void Main(string[] args)
 
         {
+            RunTaskOne();
+            RunTaskTwo();
+        }
+        //Task 1
+        static void RunTaskOne() {
+            Console.Write("Enter a number: ");
+            string userInput = Console.ReadLine();
+
+            if (int.TryParse(userInput, out int number))
+            {
+                if (number % 5 == 0)
+                {
+                    Console.WriteLine("Yes");
+                }
+                else
+                {
+                    Console.WriteLine("NO");
+                }
+            }
+        }
+
+        // Task 2
+        static void RunTaskTwo() {
             Console.Write("Enter first number: ");
             string? firstInput = Console.ReadLine();
             Console.Write("Enter second number: ");
@@ -18,21 +41,24 @@
                 Console.WriteLine($"Sum: {sum}");
                 Console.WriteLine($"Difference: {difference}");
                 Console.WriteLine($"Product: {product}");
-                
-                if (firstNumber == 0 || secondNumber == 0) {
+
+                if (firstNumber == 0 || secondNumber == 0)
+                {
                     Console.WriteLine("Error: Division by zero is not allowed!");
-                } else {
+                }
+                else
+                {
                     int quotient = firstNumber > secondNumber ? firstNumber / secondNumber : secondNumber / firstNumber;
                     Console.WriteLine($"quotient: {quotient}");
                 }
-                               
+
             }
-            else {
+            else
+            {
 
                 Console.WriteLine("Error: One or both inputs are not valid numbers!");
             }
-
-
         }
     }
+
 }
