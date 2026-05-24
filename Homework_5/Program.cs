@@ -6,7 +6,10 @@
 
         {
             // RunTaskOne();
-            RunTaskTwo();
+
+            //RunTaskTwo();
+
+            RunTaskThree();
         }
         //Task 1
         static void RunTaskOne() {
@@ -58,6 +61,38 @@
 
                 Console.WriteLine("Error: One or both inputs are not valid numbers!");
             }
+        }
+
+        // Task 3
+        static void RunTaskThree() { 
+            Console.Write("Enter a number: ");
+            var firstInput = Console.ReadLine();
+            Console.Write("Enter a second number: ");
+            var secondInput = Console.ReadLine();
+            
+            if(int.TryParse(firstInput, out var firstNumber) && int.TryParse(secondInput, out var secondNumber))
+            {
+
+                if (firstNumber != secondNumber)
+                {
+                    //var temp = firstNumber;
+                    //firstNumber = secondNumber;
+                    //secondNumber = temp;
+                    (firstNumber, secondNumber) = (secondNumber, firstNumber);
+                    Console.WriteLine($"First number after swap: {firstNumber}");
+                    Console.WriteLine($"Second number after swap: {secondNumber}");
+                }
+                else 
+                {
+                    Console.WriteLine($"Values remain: First = {firstNumber}, Second = {secondNumber}");
+                }
+               
+            } 
+            else
+            {
+                Console.WriteLine("Error: One or both inputs are not valid numbers!");
+            }
+
         }
     }
 
