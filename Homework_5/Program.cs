@@ -5,15 +5,15 @@
         static void Main(string[] args)
 
         {
-            RunTaskOne();
+            // RunTaskOne();
             RunTaskTwo();
         }
         //Task 1
         static void RunTaskOne() {
             Console.Write("Enter a number: ");
-            string userInput = Console.ReadLine();
+            var userInput = Console.ReadLine();
 
-            if (int.TryParse(userInput, out int number))
+            if (int.TryParse(userInput, out var number))
             {
                 if (number % 5 == 0)
                 {
@@ -29,15 +29,15 @@
         // Task 2
         static void RunTaskTwo() {
             Console.Write("Enter first number: ");
-            string? firstInput = Console.ReadLine();
+            var firstInput = Console.ReadLine();
             Console.Write("Enter second number: ");
-            string? secondInput = Console.ReadLine();
+            var secondInput = Console.ReadLine();
 
-            if (int.TryParse(firstInput, out int firstNumber) && int.TryParse(secondInput, out int secondNumber))
+            if (int.TryParse(firstInput, out var firstNumber) && int.TryParse(secondInput, out var secondNumber))
             {
-                int sum = firstNumber + secondNumber;
-                int difference = firstNumber > secondNumber ? firstNumber - secondNumber : secondNumber - firstNumber;
-                int product = firstNumber * secondNumber;
+                var sum = firstNumber + secondNumber;
+                var difference = firstNumber > secondNumber ? firstNumber - secondNumber : secondNumber - firstNumber;
+                var product = firstNumber * secondNumber;
                 Console.WriteLine($"Sum: {sum}");
                 Console.WriteLine($"Difference: {difference}");
                 Console.WriteLine($"Product: {product}");
@@ -48,7 +48,7 @@
                 }
                 else
                 {
-                    int quotient = firstNumber > secondNumber ? firstNumber / secondNumber : secondNumber / firstNumber;
+                    var quotient = firstNumber > secondNumber ? firstNumber / secondNumber : secondNumber / firstNumber;
                     Console.WriteLine($"quotient: {quotient}");
                 }
 
