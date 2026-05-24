@@ -9,7 +9,9 @@
 
             //RunTaskTwo();
 
-            RunTaskThree();
+            //RunTaskThree();
+
+            RunTaskFour();
         }
         //Task 1
         static void RunTaskOne() {
@@ -91,6 +93,23 @@
             else
             {
                 Console.WriteLine("Error: One or both inputs are not valid numbers!");
+            }
+
+        }
+
+        // Task 4
+        static void RunTaskFour() {
+            Console.Write("Enter a number: ");
+            var userInput = Console.ReadLine();
+            var endNumber = 9;
+
+            if (int.TryParse(userInput, out var userNumber) && userNumber > 0) { 
+                for(var i = 1; i <= endNumber; i++) {
+                    Console.WriteLine($"{userNumber} * {i} = {userNumber * i}");
+                }
+            } else
+            {
+                Console.WriteLine("Error: input must be a valid integer greate than 0.");
             }
 
         }
