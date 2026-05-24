@@ -11,9 +11,11 @@
 
             //RunTaskThree();
 
-            RunTaskFour();
+            //RunTaskFour();
+
+            RunTaskFive();
         }
-        //Task 1
+        #region Task 1
         static void RunTaskOne() {
             Console.Write("Enter a number: ");
             var userInput = Console.ReadLine();
@@ -31,7 +33,9 @@
             }
         }
 
-        // Task 2
+        #endregion
+
+        #region Task 2
         static void RunTaskTwo() {
             Console.Write("Enter first number: ");
             var firstInput = Console.ReadLine();
@@ -65,7 +69,9 @@
             }
         }
 
-        // Task 3
+        #endregion
+
+        #region Task 3
         static void RunTaskThree() { 
             Console.Write("Enter a number: ");
             var firstInput = Console.ReadLine();
@@ -97,7 +103,9 @@
 
         }
 
-        // Task 4
+        #endregion
+
+        #region Task 4
         static void RunTaskFour() {
             Console.Write("Enter a number: ");
             var userInput = Console.ReadLine();
@@ -113,6 +121,43 @@
             }
 
         }
+
+        #endregion
+
+        #region Task 5
+        static void RunTaskFive() {
+            Console.Write("Enter a number: ");
+            var userInput = Console.ReadLine();
+
+            if (int.TryParse(userInput, out var userNumber)) {
+               
+                if (userNumber >= 1) {
+                    for (var i = 1; i <= userNumber; i++) {
+                        if (i % 2 == 0) {
+                            var square = i * i;
+                            Console.WriteLine(square);
+                        }
+                    }
+                } else
+                {
+                    for (var i = -1; i >= userNumber; i--) {
+                        if (i % 2 == 0)
+                        {
+                            var square = i * i;
+                            Console.WriteLine(square);
+                        }
+                    }
+                }
+
+            } 
+            else 
+            {
+                Console.WriteLine("Error: input are not valid number!");    
+            }
+        }
+
+        #endregion
+
     }
 
 }
